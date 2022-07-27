@@ -15,8 +15,7 @@ function App() {
       </Stage>
       <input
         type="file"
-        capture="camera"
-        accept="image/*"
+        accept=".doc,.ppt,.pdf,.mp4"
         id="cameraInput"
         name="cameraInput"
       />
