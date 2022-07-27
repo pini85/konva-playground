@@ -8,7 +8,7 @@ import KonvaImgage from "./ImagePlayGround/KonvaImage";
 function App() {
   return (
     <div className="App">
-      <Stage width={900} height={900}>
+      <Stage width={300} height={300}>
         <Layer>
           <KonvaImgage src="https://randomwordgenerator.com/img/picture-generator/g33815e6df811c258a606a9a313eb798de88de92031fc196fe0bb1d4bd4fa6be7c59d43cfbfedd1268b185db543d21ba8_640.jpg" />
         </Layer>
