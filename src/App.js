@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React from "react";
+import useImage from "use-image";
+import { Image, Stage, Layer } from "react-konva";
+import KonvaImgage from "./ImagePlayGround/KonvaImage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Stage width={900} height={900}>
+        <Layer>
+          <KonvaImgage src="https://randomwordgenerator.com/img/picture-generator/g33815e6df811c258a606a9a313eb798de88de92031fc196fe0bb1d4bd4fa6be7c59d43cfbfedd1268b185db543d21ba8_640.jpg" />
+        </Layer>
+      </Stage>
+      <input
+        type="file"
+        capture="camera"
+        accept="image/*"
+        id="cameraInput"
+        name="cameraInput"
+      />
     </div>
   );
 }
