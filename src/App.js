@@ -1,16 +1,23 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import useImage from "use-image";
 import { Image, Stage, Layer } from "react-konva";
 import KonvaImgage from "./ImagePlayGround/KonvaImage";
 
 function App() {
+  const [image, setImage] = useState(null);
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    console.log(file);
+    console.log(file.type); // this
+    setImage(URL.createObjectURL(file));
+  };
   return (
     <div className="App">
       <Stage width={300} height={300}>
         <Layer>
-          <KonvaImgage src="https://randomwordgenerator.com/img/picture-generator/g33815e6df811c258a606a9a313eb798de88de92031fc196fe0bb1d4bd4fa6be7c59d43cfbfedd1268b185db543d21ba8_640.jpg" />
+          <KonvaImgage src={image} />
         </Layer>
       </Stage>
       <input
@@ -18,6 +25,7 @@ function App() {
         accept=".doc,.ppt,.pdf,.mp4,image/*"
         id="cameraInput"
         name="cameraInput"
+        onChange={(e) => handleFileUpload(e)}
       />
     </div>
   );
